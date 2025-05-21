@@ -2,51 +2,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jurista informado</title>
-    <link rel="stylesheet" href="estilo.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
-                           "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-            const hoy = new Date();
-            const dia = hoy.getDate();
-            const mes = meses[hoy.getMonth()];
-            const anio = hoy.getFullYear();
-            document.getElementById("fecha").textContent = "Santiago de Chile, " + dia + " de " + mes + " de " + anio;
-        });
-    </script>
+    <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
     <header>
-        <h1>JURISTA INFORMADO</h1>
-        <h2>Revista jurídica digital independiente</h2>
-        <div id="fecha"></div>
+        <h1>Jurista informado</h1>
+        <p class="subtitulo">Revista jurídica digital independiente</p>
+        <p class="fecha" id="fecha"></p>
     </header>
     <main>
-        <aside>
-            <h3>Presentación</h3>
-            <p><strong>Jurista informado</strong> es una revista digital, creada por una abogada chilena, apasionada por la investigación, quien busca difundir el conocimiento jurídico desde una perspectiva crítica, actual y comprometida con el derecho como herramienta de transformación social. En vez de buscar quién la publique, decidió crear su propia fuente, para así ser faro de sus propios sueños y de esos abogados que quieren que sus letras sean leídas, pero no hallan el apoyo.</p>
-            <p><em>Valeria Flores Espinoza, abogada.</em></p>
-
+        <aside class="columna-izquierda">
+            <h2>Sobre la revista</h2>
+            <p><strong>Jurista informado</strong> es una revista digital creada por <strong>Valeria Flores Espinoza</strong>, abogada chilena apasionada por la investigación jurídica.</p>
+            <p>Surge como un espacio independiente y libre, comprometido con la difusión del conocimiento jurídico desde una mirada crítica, actual y transformadora del entorno social.</p>
+            <p>En lugar de buscar quién publicara sus escritos, su creadora decidió construir su propia fuente: un faro encendido para alumbrar sus propios sueños y abrir camino a aquellos abogados y abogadas que desean ser leídos, pero no han encontrado el respaldo necesario.</p>
+            <p><strong>Aquí cada palabra importa. Aquí las letras tienen lugar.</strong></p>
             <h3>Contacto</h3>
-            <p>Email revista: <a href="mailto:juristainformado.info@gmail.com">juristainformado.info@gmail.com</a></p>
+            <p>Email institucional: <a href="mailto:juristainformado.info@gmail.com">juristainformado.info@gmail.com</a></p>
             <p>Email profesional: <a href="mailto:abogadavfe@gmail.com">abogadavfe@gmail.com</a></p>
         </aside>
-        <section>
-            <article>
-                <h3>Artículo de muestra: El derecho como herramienta de cambio</h3>
-                <p>En este primer número de <strong>Jurista informado</strong>, reflexionamos sobre el rol transformador del derecho en contextos sociales y políticos desafiantes. Se plantea la necesidad de una mirada crítica y comprometida en el ejercicio profesional, que no solo interprete la norma, sino que también la cuestione.</p>
-            </article>
-            <article>
-                <h3>Próximamente</h3>
-                <p>Aquí aparecerán las investigaciones jurídicas de Valeria y, con el tiempo, de otros juristas comprometidos. Esta revista es un espacio para la reflexión y la difusión jurídica desde una voz independiente.</p>
-            </article>
+        <section class="contenido-principal">
+            <h2>Artículos recientes</h2>
+            <p>Próximamente encontrarás aquí publicaciones originales sobre temas jurídicos actuales.</p>
         </section>
     </main>
     <footer>
-        &copy; 2025 Jurista informado. Todos los derechos reservados.
+        <p>&copy; 2025 Jurista informado. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Script para mostrar la fecha actual
+        const fechaElemento = document.getElementById("fecha");
+        const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+        const fechaHoy = new Date().toLocaleDateString('es-CL', opciones);
+        fechaElemento.textContent = `Santiago de Chile, ${fechaHoy}`;
+    </script>
 </body>
 </html>
