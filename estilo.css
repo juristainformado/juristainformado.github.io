@@ -1,66 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
 
 body {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Times New Roman', serif;
     background-color: #ffffff;
     color: #000000;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid black;
+    padding: 1.5em 0 0.5em 0;
+    border-bottom: 1px solid #ccc;
 }
 
-header h1 {
-    font-size: 48px;
-    margin: 0;
-    letter-spacing: 2px;
+h1.title {
+    font-family: 'Spectral', serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    margin-bottom: 0.2em;
 }
 
-header h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin-top: 5px;
+h2 {
+    font-size: 1.8em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
-#fecha {
-    font-size: 14px;
-    margin-top: 5px;
-    font-style: italic;
-}
-
-main {
+.container {
     display: flex;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2em;
 }
 
-aside {
+.sidebar {
     width: 30%;
-    padding-right: 20px;
+    padding-right: 2em;
     border-right: 1px solid #ccc;
+    font-size: 0.95em;
 }
 
-section {
+.content {
     width: 70%;
-    padding-left: 20px;
-}
-
-article {
-    margin-bottom: 30px;
-}
-
-article h3 {
-    margin-bottom: 10px;
+    padding-left: 2em;
 }
 
 footer {
     text-align: center;
-    font-size: 12px;
-    padding: 10px;
+    font-size: 0.85em;
+    padding: 2em 0;
     border-top: 1px solid #ccc;
-    margin-top: 40px;
+    margin-top: 2em;
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
 }
