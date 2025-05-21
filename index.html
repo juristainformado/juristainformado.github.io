@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurista informado</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+                           "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+            const hoy = new Date();
+            const dia = hoy.getDate();
+            const mes = meses[hoy.getMonth()];
+            const anio = hoy.getFullYear();
+            document.getElementById("fecha").textContent = "Santiago de Chile, " + dia + " de " + mes + " de " + anio;
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>JURISTA INFORMADO</h1>
+        <h2>Revista jurídica digital independiente</h2>
+        <div id="fecha"></div>
+    </header>
+    <main>
+        <aside>
+            <h3>Presentación</h3>
+            <p><strong>Jurista informado</strong> es una revista digital, creada por una abogada chilena apasionada por la investigación, quien busca difundir el conocimiento jurídico desde una perspectiva crítica, actual y comprometida con el derecho como herramienta de transformación social. En vez de buscar quién la publique, decidió crear su propia fuente, para así ser faro de sus propios sueños y de esos abogados que quieren que sus letras sean leídas, pero no hallan el apoyo.</p>
+            <p><em>Valeria Flores Espinoza, abogada</em></p>
+
+            <h3>Contacto</h3>
+            <p>Email revista: <a href="mailto:juristainformado.info@gmail.com">juristainformado.info@gmail.com</a></p>
+            <p>Email profesional: <a href="mailto:abogadavfe@gmail.com">abogadavfe@gmail.com</a></p>
+        </aside>
+        <section>
+            <article>
+                <h3>Artículo de muestra: El derecho como herramienta de cambio</h3>
+                <p>En este primer número de <strong>Jurista informado</strong>, reflexionamos sobre el rol transformador del derecho en contextos sociales y políticos desafiantes. Se plantea la necesidad de una mirada crítica y comprometida en el ejercicio profesional, que no solo interprete la norma, sino que también la cuestione.</p>
+            </article>
+            <article>
+                <h3>Próximamente</h3>
+                <p>Aquí aparecerán las investigaciones jurídicas de Valeria y, con el tiempo, de otros juristas comprometidos. Esta revista es un espacio para la reflexión y la difusión jurídica desde una voz independiente.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Jurista informado. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
