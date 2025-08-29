@@ -1,27 +1,14 @@
-[
-  {
-    "fecha": "29 Ago. 2025",
-    "titulo": "Promulgada Ley sobre Protección de Datos Personales",
-    "link": "https://www.diariooficial.cl/ley123"
-  },
-  {
-    "fecha": "28 Ago. 2025",
-    "titulo": "Decreto Supremo regula nuevas disposiciones financieras",
-    "link": "https://www.diariooficial.cl/decreto456"
-  },
-  {
-    "fecha": "27 Ago. 2025",
-    "titulo": "Resolución del Ministerio de Justicia en materia de nombramientos",
-    "link": "https://www.diariooficial.cl/resolucion789"
-  },
-  {
-    "fecha": "26 Ago. 2025",
-    "titulo": "Circular instruye a tribunales sobre aplicación de normativa vigente",
-    "link": "https://www.diariooficial.cl/circular101"
-  },
-  {
-    "fecha": "25 Ago. 2025",
-    "titulo": "Reglamento de transporte público entra en vigencia",
-    "link": "https://www.diariooficial.cl/reglamento202"
-  }
-]
+{
+  "noticias": [
+    {
+      "titulo": "Nueva Ley de Protección Ambiental",
+      "fecha": "2025-08-29",
+      "contenido": "El Diario Oficial publicó hoy la Ley N°21.999 que establece medidas de protección ambiental..."
+    },
+    {
+      "titulo": "Nombramiento de nuevas autoridades",
+      "fecha": "2025-08-28",
+      "contenido": "Se oficializó el nombramiento de nuevas autoridades en distintos ministerios..."
+    }
+  ]
+}
