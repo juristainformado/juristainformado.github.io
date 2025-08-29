@@ -1,26 +1,26 @@
 import requests
+from bs4 import BeautifulSoup
 import json
 from datetime import datetime
 
-# URL de ejemplo del Diario Oficial (ajustaremos si cambia la fuente real)
 URL = "https://www.diariooficial.interior.gob.cl/feed/"
 
 def obtener_noticias():
     try:
-        response = requests.get(URL, timeout=10)
-        response.raise_for_status()
+        response = requests.get(URL)
+        soup = BeautifulSoup(response.text, "xml")  # RSS feed
 
-        # Guardamos el feed como JSON simplificado
         noticias = []
-        for i, item in enumerate(response.text.split("<item>")[1:6], start=1):  
-            titulo = item.split("<title>")[1].split("</title>")[0]
-            link = item.split("<link>")[1].split("</link>")[0]
-
+        items = soup.find_all("item")[:5]  # primeros 5
+        for i, item in enumerate(items, start=1):
+            titulo = item.title.text
+            link = item.link.text
+            fecha = item.pubDate.text
             noticias.append({
                 "id": i,
-                "titulo": titulo.strip(),
-                "link": link.strip(),
-                "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                "titulo": titulo,
+                "link": link,
+                "fecha": fecha
             })
 
         with open("noticias.json", "w", encoding="utf-8") as f:
@@ -29,7 +29,7 @@ def obtener_noticias():
         print("✅ Noticias actualizadas en noticias.json")
 
     except Exception as e:
-        print("❌ Error obteniendo noticias:", e)
+        print("❌ Error:", e)
 
 if __name__ == "__main__":
     obtener_noticias()
