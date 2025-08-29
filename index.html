@@ -50,5 +50,30 @@
         const fechaHoy = new Date().toLocaleDateString('es-CL', opciones);
         fechaElemento.textContent = `Santiago de Chile, ${fechaHoy}`;
     </script>
-</body>
+<<!-- Columna lateral del Diario Oficial -->
+<aside id="diario-oficial" style="width: 280px; float: right; padding: 15px; border-left: 1px solid #000; background-color: #fafafa; font-family: 'Times New Roman', serif; font-size: 15px; line-height: 1.6; margin: 10px;">
+  <h3 style="text-align: center; font-weight: bold; font-size: 18px; border-bottom: 1px solid #000; padding-bottom: 5px; margin-bottom: 10px;">
+    ACTUALIZACIONES DEL DIARIO OFICIAL
+  </h3>
+  <ul id="do-entries" style="list-style: none; padding: 0; margin: 0;">
+    <!-- Aquí se insertan automáticamente las últimas publicaciones -->
+  </ul>
+</aside>
+
+<script>
+  // Leer el archivo JSON con las publicaciones recientes
+  fetch('do.json')
+    .then(response => response.json())
+    .then(data => {
+      const list = document.getElementById('do-entries');
+      data.forEach(item => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '12px';
+        li.innerHTML = `<span style="font-weight:bold;">${item.fecha}</span> — <a href="${item.link}" target="_blank" style="color:#000; text-decoration:none;">${item.titulo}</a>`;
+        list.appendChild(li);
+      });
+    })
+    .catch(error => console.error('Error cargando las actualizaciones:', error));
+</script>
+/body>
 </html>
