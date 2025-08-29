@@ -39,24 +39,11 @@
             <p>Próximamente encontrarás aquí publicaciones originales sobre temas jurídicos actuales.</p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Jurista informado. Todos los derechos reservados.</p>
-    </footer>
 
-    <script>
-        // Script para mostrar la fecha actual
-        const fechaElemento = document.getElementById("fecha");
-        const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-        const fechaHoy = new Date().toLocaleDateString('es-CL', opciones);
-        fechaElemento.textContent = `Santiago de Chile, ${fechaHoy}`;
-    </script>
-</body> 
-    <!-- Columna lateral del Diario Oficial -->
-<aside id="diario-oficial" style="width: 280px; float: right; padding: 15px; border-left: 1px solid #000; background-color: #fafafa; font-family: 'Times New Roman', serif; font-size: 15px; line-height: 1.6; margin: 10px;">
-  <h3 style="text-align: center; font-weight: bold; font-size: 18px; border-bottom: 1px solid #000; padding-bottom: 5px; margin-bottom: 10px;">
-    ACTUALIZACIONES DEL DIARIO OFICIAL
-  </h3>
-  <ul id="do-entries" style="list-style: none; padding: 0; margin: 0;">
+     <!-- Columna lateral del Diario Oficial -->
+<aside id="diario-oficial" style="width: 300px; float: right; padding: 15px; border-left: 2px solid #ccc; background-color: #f9f9f9; margin: 10px;">
+  <h3 style="text-align: center; font-family: Arial, sans-serif; color: #2c3e50;">Actualizaciones del Diario Oficial</h3>
+  <ul id="do-entries" style="list-style: none; padding: 0; font-family: Arial, sans-serif; font-size: 14px;">
     <!-- Aquí se insertan automáticamente las últimas publicaciones -->
   </ul>
 </aside>
@@ -69,12 +56,25 @@
       const list = document.getElementById('do-entries');
       data.forEach(item => {
         const li = document.createElement('li');
-        li.style.marginBottom = '12px';
-        li.innerHTML = `<span style="font-weight:bold;">${item.fecha}</span> — <a href="${item.link}" target="_blank" style="color:#000; text-decoration:none;">${item.titulo}</a>`;
+        li.style.marginBottom = '10px';
+        li.innerHTML = `<strong>${item.fecha}</strong>: <a href="${item.link}" target="_blank">${item.titulo}</a>`;
         list.appendChild(li);
       });
     })
     .catch(error => console.error('Error cargando las actualizaciones:', error));
 </script>
+
+    <footer>
+        <p>&copy; 2025 Jurista informado. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Script para mostrar la fecha actual
+        const fechaElemento = document.getElementById("fecha");
+        const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+        const fechaHoy = new Date().toLocaleDateString('es-CL', opciones);
+        fechaElemento.textContent = `Santiago de Chile, ${fechaHoy}`;
+    </script>
+</body> 
 
 </html>
